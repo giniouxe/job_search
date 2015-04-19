@@ -1,15 +1,16 @@
 class CreateOffers < ActiveRecord::Migration
   def change
     create_table :offers do |t|
+      t.string :document_id
       t.string :job_title
-      t.string :organisation_name
+      t.string :organization_name
       t.string :agency_sub_element
-      t.string :min_salary
-      t.string :max_salary
+      t.string :salary_min
+      t.string :salary_max
       t.string :salary_basis
       t.string :start_date
-      t.string :end_date
-      t.string :who_may_apply
+      t.date :end_date
+      t.date :who_may_apply_text
       t.string :pay_plan
       t.string :series
       t.string :grade
