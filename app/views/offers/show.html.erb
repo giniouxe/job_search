@@ -1,38 +1,44 @@
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
-		<h1><%= @offer.job_title %></h1>
-		<h3>
-			<%= @offer.organization_name %>, <%= @offer.agency_sub_element %> -
-			<%= @offer.locations %>
-		</h3>
-		<p>
-			<b>Minimum salary:</b> <%= @offer.salary_min %> |
-			<b>Maximum salary:</b> <%= @offer.salary_max %> |
-			<b>Salary basis:</b> <%= @offer.salary_basis %> |
-			<b>Pay plan:</b> <%= @offer.pay_plan %>
-		</p>
-		<p>
-			<b>Start date:</b> <%= @offer.start_date %> |
-			<b>End date:</b> <%= @offer.end_date %>
-		</p>
-		<p>
-			<b>Who may apply:</b> <%= @offer.who_may_apply_text %>
-		</p>
-		<p>
-			<b>Series:</b> <%= @offer.series %> | Grade: <%= @offer.grade %>
-		</p>
-		<p>
-			<b>Work schedule:</b> <%= @offer.work_schedule %>
-		</p>
-		<p>
-			<b>Work type:</b> <%= @offer.work_type %>
-		</p>
-		<p>
-			<b>Announcement number:</b> <%= @offer.announcement_number %>
-		</p>
-		<p>
-			<%= @offer.job_summary %>
-		</p>
-		<%= link_to 'Apply online', @offer.apply_online_url, class: 'btn btn-primary' %>
-	</div>
+  <div class="col-md-10 col-md-offset-1">
+    <h1><%= @offer.job_title %>
+      <span class="badge">
+        Posted
+        <%= distance_of_time_in_words(@offer.created_at, Time.zone.now) %>
+        ago
+      </span>
+    </h1>
+    <h3>
+      <%= @offer.organization_name %>, <%= @offer.agency_sub_element %> -
+      <%= @offer.locations %>
+    </h3>
+    <p>
+      <b>Minimum salary:</b> <%= @offer.salary_min %> |
+      <b>Maximum salary:</b> <%= @offer.salary_max %> |
+      <b>Salary basis:</b> <%= @offer.salary_basis %> |
+      <b>Pay plan:</b> <%= @offer.pay_plan %>
+    </p>
+    <p>
+      <b>Start date:</b> <%= @offer.start_date %> |
+      <b>End date:</b> <%= @offer.end_date %>
+    </p>
+    <p>
+      <b>Who may apply:</b> <%= @offer.who_may_apply_text %>
+    </p>
+    <p>
+      <b>Series:</b> <%= @offer.series %> | Grade: <%= @offer.grade %>
+    </p>
+    <p>
+      <b>Work schedule:</b> <%= @offer.work_schedule %>
+    </p>
+    <p>
+      <b>Work type:</b> <%= @offer.work_type %>
+    </p>
+    <p>
+      <b>Announcement number:</b> <%= @offer.announcement_number %>
+    </p>
+    <p>
+      <%= @offer.job_summary %>
+    </p>
+    <%= link_to 'Apply online', @offer.apply_online_url, class: 'btn btn-primary' %>
+  </div>
 </div>

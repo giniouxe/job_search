@@ -4,6 +4,11 @@
     <ul class="list-group">
       <% @offers.each do |offer| %>
         <li class="list-group-item">
+          <span class="badge">
+            Posted
+            <%= distance_of_time_in_words(offer.created_at, Time.zone.now) %>
+            ago
+          </span>
           <h4 class="list-group-item-heading">
             <%= link_to offer.job_title, offer %>
           </h4>
