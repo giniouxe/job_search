@@ -1,6 +1,8 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.paginate(page: params[:page], per_page: 20)
+    @offers = Offer.search(params[:query]).paginate(page: params[:page],
+                                                    per_page: 20)
+    @query = params[:query]
   end
 
   def show

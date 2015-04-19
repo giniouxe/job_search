@@ -1,6 +1,21 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1>Our latests job offers</h1>
+    <h1>All jobs, in one place</h1>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag offers_path, method: 'get', class: 'form-group' do %>
+      <%= label_tag 'query', 'Search by job title, keywords, location...' %>
+      <%= search_field_tag 'query', '', class: 'form-control' %>
+      <%= submit_tag 'Search', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+  <div class="col-md-10 col-md-offset-1">
+    <% if @query.nil? %>
+      <h2>Our latests job offers</h2>
+    <% else %>
+      <h2>Results for <%= @query %></h2>
+    <% end %>
     <ul class="list-group">
       <% @offers.each do |offer| %>
         <li class="list-group-item">
