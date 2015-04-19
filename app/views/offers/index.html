@@ -1,7 +1,0 @@
-<h1>Our latests job offers</h1>
-<ul>
-	<% @offers.each do |offer| %>
-		<li><%= link_to offer.job_title, offer %></li>
-	<% end %>
-</ul>
-<%= will_paginate @offers %>
