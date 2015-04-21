@@ -11,7 +11,7 @@ To do :
 
 ### Déploiement
 
-A tester sur : http://all-jobs-one-place.heroku-app.com
+A tester sur : http://all-jobs-one-place.herokuapp.com
 
 ### Installation
 
